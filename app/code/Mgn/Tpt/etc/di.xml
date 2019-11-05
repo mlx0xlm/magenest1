@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="MagenestPartTime_Data_Source" xsi:type="string">Mgn\Tpt\Model\ResourceModel\MagenestPartTime\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mgn\Tpt\Model\ResourceModel\MagenestPartTime\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_part_time</argument>       <!-- ten bang -->
+            <argument name="resourceModel" xsi:type="string">Mgn\Tpt\Model\ResourceModel\MagenestPartTime</argument>
+        </arguments>
+    </virtualType>
+</config>

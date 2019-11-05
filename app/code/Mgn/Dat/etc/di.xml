@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dat_data_source" xsi:type="string">Mgn\Dat\Model\ResourceModel\Dat\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mgn\Dat\Model\ResourceModel\Dat\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_dat</argument>       <!-- ten bang -->
+            <argument name="resourceModel" xsi:type="string">Mgn\Dat\Model\ResourceModel\Dat</argument>
+        </arguments>
+    </virtualType>
+</config>

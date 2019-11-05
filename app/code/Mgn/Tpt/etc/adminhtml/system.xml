@@ -1,0 +1,24 @@
+<?xml	version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- tao 1 the trong configuration-->
+        <tab	id="magenest"	translate="label"	sortOrder="1">
+            <label>My Config </label>
+        </tab>
+        <!--tao 1 the con-->
+        <section	id="magenest"	translate="label"	type="text"	sortOrder="100" showInDefault="1"	showInWebsite="1"	showInStore="1">
+            <label>Config add to cart</label>
+            <!--tao 1trang -->
+            <tab>magenest</tab>
+            <resource>Mgn_Tpt::index</resource>
+            <group	id="config"	translate="label"	type="text"	sortOrder="1"
+                      showInDefault="1"	showInWebsite="1"	showInStore="1">
+                <label>Config add to cart</label>
+                <field	id="value"	translate="label"	type="text"
+                          sortOrder="1"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                    <label>Product Name</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

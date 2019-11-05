@@ -1,0 +1,17 @@
+<div id="ajaxresponse">
+    <p></p>
+</div>
+
+<?php
+    $ajaxurl = $block->getAjaxUrl();
+?>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Codextblog_Custom/js/custom": {
+                    "AjaxUrl": "<?php echo $ajaxurl; ?>",
+                    "CurrentProduct": "<?php echo $currentProductId; ?>",
+                }
+            }
+        }
+</script>

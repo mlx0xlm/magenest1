@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="cybergame_data_source" xsi:type="string">Mgn\Cybergame\Model\ResourceModel\GamerAccountList\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mgn\Cybergame\Model\ResourceModel\GamerAccountList\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">gamer_account_list</argument>
+            <argument name="resourceModel" xsi:type="string">Mgn\Cybergame\Model\ResourceModel\GamerAccountList</argument>
+        </arguments>
+    </virtualType>
+</config>

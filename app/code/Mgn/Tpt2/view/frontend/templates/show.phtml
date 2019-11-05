@@ -1,0 +1,51 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$manufacturer = $objectManager->create('Mgn\Tpt2\Model\ResourceModel\Manufacturer\CollectionFactory');
+$result = $manufacturer->create();
+?>
+<select style="width: 100px" id="chartOption" onchange="getManufacturer()">
+    <option value="">Select Manufacturer</option>
+<?php
+foreach ($result as $item):
+?>
+    <option value="<?php echo $item['entity_id']?>"> <?php echo $item['name']?> </option>
+<?php
+endforeach;?>
+</select>
+<br><br>
+<div id="result">
+    <p><span class="name"></span></p>
+    <p><span class="enabled"></span></p>
+    <p><span class="address_street"></span></p>
+    <p><span class="address_city"></span></p>
+</div>
+<script type="text/javascript">
+    function getManufacturer() {
+        var a = document.getElementById("chartOption");  /**/
+        var abc = a.options[a.selectedIndex].value; /*lay value cua option*/
+        //data = jQuery(this).serialize();
+        if(abc!=="")
+        {
+            jQuery('#result').show();
+            jQuery.ajax(
+                {
+                    type: "POST",
+                    dataType: "json",
+                    showLoader: true,
+                    url: "<?php $block->getUrl('tpt2/manufacturer/manufacturer')?>", /*link toi file xu ly lay du lieu*/
+                    data: {id: abc},  /**/
+                }
+            ).done(function (response) {
+                jQuery('#result').show();
+                jQuery('.name').text("Name:  "+response.name);
+                jQuery('.enabled').text("Enable:   "+response.address_street);
+                jQuery('.address_street').text("Address Street:   "+response.address_street);
+                jQuery('.address_city').text("Address City:   "+response.address_city);
+            });
+        }
+        else
+            jQuery('#result').hide();
+    }
+</script>
+
+

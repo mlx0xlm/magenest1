@@ -1,0 +1,23 @@
+<span>Field:</span> <input type="text" style="width: 100px" id="field">
+<input type="button" value="Enter" onclick="check()">
+
+<script>
+    function check() {
+
+        var field = jQuery('#field').val();
+        jQuery.ajax(
+            {
+                type: "POST",
+                dataType: "json",
+                showLoader: true,
+                url: "getinfocustomer/getdata", /*link toi file xu ly lay du lieu*/
+                data: {id: field},  /**/
+            }
+        ).done(function (response) {
+            var name=response.firstname;
+            var email= response.email;
+
+            alert(name+"\n"+email );
+        });
+    }
+</script>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mgn::Mem"
+             title="Test Part Time"
+             module="Mgn_Tpt"
+             sortOrder="31"
+             resource="Mgn_Tpt::index"/>
+        <add
+                id="Mgn::Member"
+                title="Member"
+                module="Mgn_Tpt"
+                sortOrder="1"
+                parent="Mgn::Mem"
+                action="tpt/magenestparttime"
+                resource="Mgn_Tpt::index"
+        />
+        <add
+                id="Mgn::3b"
+                title="3b Test Full Time"
+                module="Mgn_Tpt"
+                sortOrder="2"
+                parent="Mgn::Mem"
+                action="tpt/parttime"
+                resource="Mgn_Tpt::index"
+        />
+    </menu>
+</config>

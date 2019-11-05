@@ -1,0 +1,12 @@
+<?php
+$check=$block->getLoggedinCustomerId();
+
+?>
+<?php if($check == 1){ ?>
+    <div class="field is_manager">
+        <label class="label" for="is_manager">
+            <input type="checkbox" name="is_manager" id="is_manager" value="1" title="<?= $block->escapeHtmlAttr(__('Im a cyber manager (edit page)')) ?>">
+            <span><?= $block->escapeHtml(__('Im a cyber manager (edit page)')) ?></span>
+        </label>
+    </div>
+<?php } ?>

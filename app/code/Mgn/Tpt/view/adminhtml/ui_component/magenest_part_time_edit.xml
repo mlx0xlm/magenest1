@@ -67,13 +67,13 @@
                 </item>
             </argument>
         </field>
-        <field name="phone"> <!--ten cua tag -->
+        <field name="phone"> <!--du lieu tuong ung voi cot cua bang-->
             <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
-                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cau hinh cho cot -->
                     <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
                     <item name="label" xsi:type="string" translate="true">Phone</item> <!--nhan dan cua field-->
                     <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
-                    <item name="dataScope" xsi:type="string">phone</item> <!--du lieu tuong ung voi cot cua bang-->
+                    <item name="dataScope" xsi:type="string">phone</item> <!--tieu de cua cot-->
                 </item>
             </argument>
         </field>

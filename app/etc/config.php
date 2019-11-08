@@ -149,9 +149,11 @@ return [
         'Magento_PaypalReCaptcha' => 1,
         'Mgn_Cybergame' => 1,
         'Mgn_Dat' => 1,
+        'Mgn_Test5' => 1,
         'Mgn_TestAjax' => 1,
         'Mgn_Tpt' => 1,
         'Mgn_Tpt2' => 1,
+        'Mgn_Wedding' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]

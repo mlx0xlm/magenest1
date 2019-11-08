@@ -18,6 +18,5 @@ class SaveManufacturer implements ObserverInterface
         $ManufacturerId=$_product->getData()['manufacturer_id']; // for sku
         $id=$this->manufacturer->create()->getById($ManufacturerId);
         $a=1;
-
     }
 }

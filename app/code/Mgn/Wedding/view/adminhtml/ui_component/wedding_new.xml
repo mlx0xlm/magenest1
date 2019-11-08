@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">wedding_new.Wedding_Data_Source</item>
+            <item name="deps" xsi:type="string">wedding_new.Wedding_Data_Source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Employee Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">wedding_new</item> <!--ten cua file nay-->
+        </item>
+
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">Mgn\Wedding\Block\Adminhtml\Wedding\SaveButton</item> <!--nut save trong block-->
+        </item>
+
+    </argument>
+
+    <dataSource name="Wedding_Data_Source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mgn\Wedding\Model\DataProvider</argument>
+            <argument name="name" xsi:type="string">Wedding_Data_Source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="wedding/wedding/save"/> <!--file xu ly chuc nang save-->
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+
+    </dataSource>
+    <fieldset name="wedding_new">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">Wedding</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+
+        <field name="title"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Title</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">title</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="bride_firstname"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--thẻ này cấu hình cho field-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Bride First Name</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">bride_firstname</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="bride_lastname"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Bride Last Name</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">bride_lastname</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="bride_email"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Bride Email</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">bride_email</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="sent_to_bride"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">int</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Send to Bride</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">checkbox</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">sent_to_bride</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="groom_firstname"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--thẻ này cấu hình cho field-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Groom First Name</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">bride_firstname</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="groom_lastname"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Groom Last Name</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">groom_lastname</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="groom_email"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Groom Email</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">groom_email</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="sent_to_groom"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">int</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Send to Groom</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">checkbox</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">sent_to_groom</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+        <field name="message"> <!--ten cua tag -->
+            <argument name="data" xsi:type="array"> <!--cai nay khong ro-->
+                <item name="config" xsi:type="array"> <!--cai nay khong ro-->
+                    <item name="dataType" xsi:type="string">text</item> <!--kieu du lieu cua cot trong bang-->
+                    <item name="label" xsi:type="string" translate="true">Message</item> <!--nhan dan cua field-->
+                    <item name="formElement" xsi:type="string">input</item>  <!--loai the trong form. vi du day la the textbox-->
+                    <item name="dataScope" xsi:type="string">message</item> <!--du lieu tuong ung voi cot cua bang-->
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

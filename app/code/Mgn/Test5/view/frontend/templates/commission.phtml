@@ -1,0 +1,21 @@
+<?php
+ $customerId= $block->getCustommer();
+ ?>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Sku</th>
+        <th>Sale agent Id</th>
+        <th>Commission Value</th>
+        <th>Commission Type</th>
+    </tr>
+    <?php foreach ($customerId as $item){?>
+        <tr>
+            <td><?php echo $item->getName()?></td>
+            <td><?php echo $item->getSku()?></td>
+            <td><?php echo $item->getSaleAgentId()?></td>
+            <td><?php echo $item->getCommissionValue()?></td>
+            <td><?php echo $item->getCommissionType()?></td>
+        </tr>
+    <?php }?>
+</table>

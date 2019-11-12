@@ -147,7 +147,7 @@ return [
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
         'Magento_PaypalReCaptcha' => 1,
-        'Mgn_Cybergame' => 1,
+        'Mgn_Cybergame' => 0,
         'Mgn_Dat' => 1,
         'Mgn_Test5' => 1,
         'Mgn_TestAjax' => 1,

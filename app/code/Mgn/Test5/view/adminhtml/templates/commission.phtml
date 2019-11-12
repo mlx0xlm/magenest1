@@ -1,0 +1,15 @@
+<?php
+$commission = $block->getCommission()->getData();
+?>
+<table border="1">
+    <tr>
+        <td>Product Sku</td>
+        <td>Commission Value</td>
+    </tr>
+    <?php foreach ($commission as $item) {?>
+    <tr>
+            <td><?php echo $item['sku'] ?></td>
+            <td><?php echo $item['commission_value']?></td>
+    </tr>
+    <?php }?>
+</table>

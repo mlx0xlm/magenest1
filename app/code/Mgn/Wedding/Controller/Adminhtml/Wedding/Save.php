@@ -17,10 +17,15 @@ class Save extends \Magento\Framework\App\Action\Action
         $wedding = $this->wedding->create();
         $wedding->setData($data)->save();
         $id= $wedding->getId();
+        $sku=$wedding->getTitle();
         $product=$this->product->create();
-        $product->setData('wedding_id',$id);
-        $product->setName('hihii');
-        $product->setSku('sku');
+        $product->setSku($id.$sku);
+        $product->setName($sku);
+        $product->setTypeId(\Magento\Catalog\Model\Product\Type::TYPE_SIMPLE);
+        $product->setVisibility(4);
+        $product->setPrice(1);
+        $product->setAttributeSetId(4); // Default attribute set for products
+        $product->setStatus(\Magento\Catalog\Model\Product\Attribute\Source\Status::STATUS_ENABLED);
         $product->save();
         $this->messageManager->addSuccessMessage('Add Done !');
         $this->_redirect('wedding/wedding');

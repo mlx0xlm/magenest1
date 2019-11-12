@@ -1,0 +1,86 @@
+<body>
+<div><span style="width: 150px">Bride Email :</span> <input type="text" id="email-b" placeholder="Bride Email"
+                                                            style="width: 200px"></div>
+<div><span style="width: 150px">Groom Email :</span> <input type="text" id="email-g" placeholder="Groom Email"
+                                                            style="width: 200px"></div>
+
+<button id="search-wedding">Search</button>
+<div hidden id="result" style="width: 700px;height: 200px;margin: 10px auto; background-color: gainsboro;padding: auto">
+    <div style="width: 500px; margin: 10px auto">
+        <div style="float: top">
+            <div style=" width: 250px">Bride Email:<span id="bride-email"></span></div>
+            <div style="width: 250px"> Groom Email:<span id="groom-email"></span></div>
+        </div>
+        <div>
+           <div> <span>Amount *</span> <input id="amount" type="text" style="width: 150px"></div>
+        </div>
+        <br>
+        <button disabled style=" float: bottom;margin-bottom: 20px;margin-right: 5px" id="add-to-cart">Add to cart</button>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function ($)
+    {
+        $(document).ready( function() {
+            $('#add-to-cart').attr("disabled", true);
+        });
+        $('#amount').keyup(function () {
+
+            var check= $('#amount').val();
+            if(check.match(/^\d+$/))
+            {
+               $('#add-to-cart').attr("disabled", false);
+            }
+            else
+            {
+                $('#add-to-cart').attr("disabled", true);
+            }
+            console.log(check);
+        });
+        $("#add-to-cart").click(function () {
+            var amount= $('#amount').val();
+            $.ajax(
+                {
+                    method: "POST",
+                    dataType: "json",
+                    showLoader: true,
+                    url: "<?php echo $block->getUrl('wedding/addtocart/addtocart')?>",
+                    data: {id:amount}
+                }
+            ).done(function () {
+                    alert("add success");
+                }
+            );
+        });
+
+        $("#search-wedding").click(function () {
+                var brideEmail = $("#email-b").val();
+                var groomEmail = $("#email-g").val();
+
+                if (brideEmail !== "" && groomEmail !== "") {
+                    $.ajax(
+                        {
+                            method: "POST",
+                            dataType: "json",
+                            showLoader: true,
+                            url: "<?php echo $block->getUrl('wedding/searchwedding/search')?>",
+                            data: {brideEmail: brideEmail, groomEmail: groomEmail}
+                        }
+                    ).done(function (response) {
+                        if (response.totalRecords > 0 && response.items.length > 0) {
+                            $("#result").show();
+                            var bride_email = response.items[0].bride_email;
+                            var groom_email = response.items[0].groom_email;
+                            $('#bride-email').text(bride_email);
+                            $('#groom-email').text(groom_email);
+                        } else alert("can not find email");
+                    });
+                } else {
+                    alert("input not null");
+                }
+            }
+        );
+    });
+</script>

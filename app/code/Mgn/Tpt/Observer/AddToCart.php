@@ -25,12 +25,12 @@ class AddToCart implements ObserverInterface
     public function execute(EventObserver $observer)
     {
         $customer = $observer->getProduct();
-        $product=$customer->getName();
-        $myValue = $this->Scope->getValue('magenest/config/value', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-       if($myValue != $product)
-       {
-           $observer->getRequest()->setParam('product', false);
-       }
-        return $this;
+//        $product=$customer->getName();
+//        $myValue = $this->Scope->getValue('magenest/config/value', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+//       if($myValue != $product)
+//       {
+//           $observer->getRequest()->setParam('product', false);
+//       }
+//        return $this;
     }
 }
